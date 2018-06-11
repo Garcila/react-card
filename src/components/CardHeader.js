@@ -12,14 +12,14 @@ export default class CardHeader extends Component {
 				/>
 				<div style={styles.cardInfo}>
 					<p>
-						{postTitle}
-						<span>
+						<span style={{fontWeight: 'bold'}}>{postTitle} </span>
+						<span style={{color: 'grey'}}>
 							{' '}
 							{authorTwitter} - {datePosted}
 						</span>
 					</p>
 					<p>{postTitle}</p>
-					<p>`author: @${authorTwitter}`</p>
+					<p>author: <a style={styles.linkTwitter} href={`https://twitter.com/${authorTwitter}`}>{authorTwitter}</a></p>
 				</div>
 			</div>
 		);
@@ -29,16 +29,19 @@ export default class CardHeader extends Component {
 const styles = {
 	cardHeader: {
       display: 'flex',
-      // justifyContent: 'center',
-      // alignItems: 'flex-start',
       maxWidth: '50rem',
       fontFamily: 'monospace',
-      // padding: '1rem'
 	},
 	cardInfo: {
     textAlign: 'left',
-	},
+  },
+  linkTwitter: {
+    textDecoration: 'none',
+  },
 	logo: {
-		width: '6rem',
+    alignSelf: 'center',
+    width: '4rem',
+    height:'3rem',
+    padding:'0.5rem'
 	}
 };

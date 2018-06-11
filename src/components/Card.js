@@ -7,7 +7,7 @@ import CardSocial from './CardSocial';
 export default class Card extends Component {
 	render(props) {
 		const {
-      datePosted,
+			datePosted,
 			postTitle,
 			postDescription,
 			authorName,
@@ -21,7 +21,7 @@ export default class Card extends Component {
 		return (
 			<div style={styles.Card}>
 				<CardHeader
-          datePosted={datePosted}
+					datePosted={datePosted}
 					postTitle={postTitle}
 					authorTwitter={authorTwitter}
 				/>
@@ -35,10 +35,12 @@ export default class Card extends Component {
 					postDescription={postDescription}
 				/>
 				<CardSocial
+					datePosted={datePosted}
 					postComments={postComments}
 					postRePosted={postRePosted}
 					postLikes={postLikes}
 					postShares={postShares}
+					increase={this.props.increase}
 				/>
 			</div>
 		);
@@ -46,21 +48,16 @@ export default class Card extends Component {
 }
 
 const styles = {
-  Card: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start'
-  },
-}
-
-// state = {
-//   postTitle: '',
-//   postDescription: '',
-//   authorName: '',
-//   authorTwitter: '',
-//   authorPhoto: '',
-//   postComments: '',
-//   postRePosted: 0,
-//   postLikes: 0,
-//   postShares: 0,
-// }
+	Card: {
+		marginTop: '1rem',
+		display: 'flex',
+		flexWrap: 'wrap',
+		width: '20rem',
+		flexDirection: 'column',
+		alignItems: 'flex-start',
+		border: '1px solid #939393',
+		borderLeft: 0,
+		borderRight: 0,
+		padding: '1rem 0'
+	}
+};
