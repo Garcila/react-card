@@ -38,8 +38,9 @@ class App extends Component {
 
 const styles = {
 	App: {
+		marginLeft: '1rem',
 		display: 'flex',
-		flexWrap: 'wrap'
+		flexWrap: 'wrap',
 	}
 }
 

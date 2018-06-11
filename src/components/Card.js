@@ -58,6 +58,8 @@ const styles = {
 		border: '1px solid #939393',
 		borderLeft: 0,
 		borderRight: 0,
-		padding: '1rem 0'
+		padding: '1rem 0',
+		backgroundColor: 'white',
+		marginRight: '0.6rem',
 	}
 };
