@@ -2,23 +2,25 @@ import React, { Component } from 'react';
 var FontAwesome = require('react-fontawesome');
 
 export default class CardSocial extends Component {
-	handleClick = (e) => {
+	handleClick = e => {
 		const posted = this.props.datePosted;
 		const action = e.target.getAttribute('data');
 		this.props.increase(posted, action);
-	}
+	};
 	render() {
 		const {
 			postComments,
 			postRePosted,
 			postLikes,
-			postShares
+			postShares,
+			red
 		} = this.props;
 
 		return (
 			<div style={styles.CardSocial}>
 				<span>
 					<FontAwesome
+						style={{ color: `rgba(${red},0,0,255)` }}
 						name="comment"
 						data="Comments"
 						onClick={this.handleClick}

@@ -14,11 +14,18 @@ class App extends Component {
 
 	increase = (posted, action) => {
 		const cards = [...this.state.cards];
+
+		// find the index of the selected card in the array
 		const index = this.state.cards.findIndex(
 			card => card.datePosted === posted
 		);
+
+		// create string post + action to increase count of
 		const dataAction = `post${action}`;
 		cards[index][dataAction] += 1;
+
+		// increase the value of color red in clicked icon
+		cards[index].red += 10;
 		this.setState({ cards: cards });
 	};
 
@@ -32,7 +39,11 @@ class App extends Component {
 					increase={this.increase}
 				/>
 			));
-		return <div className="App" style={styles.App} >{cards}</div>;
+		return (
+			<div className="App" style={styles.App}>
+				{cards}
+			</div>
+		);
 	}
 }
 
@@ -40,8 +51,8 @@ const styles = {
 	App: {
 		marginLeft: '1rem',
 		display: 'flex',
-		flexWrap: 'wrap',
+		flexWrap: 'wrap'
 	}
-}
+};
 
 export default App;

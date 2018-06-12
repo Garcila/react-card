@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CardHeader from './CardHeader';
 import CardTop from './CardTop';
 import CardInfo from './CardInfo';
+// import CardSocial from './CardSocial';
 import CardSocial from './CardSocial';
 
 export default class Card extends Component {
@@ -16,7 +17,8 @@ export default class Card extends Component {
 			postComments,
 			postRePosted,
 			postLikes,
-			postShares
+			postShares,
+			red
 		} = this.props.state;
 		return (
 			<div style={styles.Card}>
@@ -35,6 +37,7 @@ export default class Card extends Component {
 					postDescription={postDescription}
 				/>
 				<CardSocial
+					red={red}
 					datePosted={datePosted}
 					postComments={postComments}
 					postRePosted={postRePosted}
@@ -60,6 +63,6 @@ const styles = {
 		borderRight: 0,
 		padding: '1rem 0',
 		backgroundColor: 'white',
-		marginRight: '0.6rem',
+		marginRight: '0.6rem'
 	}
 };
